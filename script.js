@@ -26,7 +26,7 @@ $(function() {
 /* Pop up */
 
 let button = document.getElementById('open');
-let close = document.getElementById('win');
+let close = document.getElementById('closed');
 
 button.addEventListener('click', function(event){
     event.preventDefault();
