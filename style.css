@@ -77,17 +77,176 @@ body{
 .modal{
     display: none;
     position: fixed;
-    left: 430px;
-    top: 30px;
+    left: 425px;
+    top: 20px;
     z-index: 100;
     width: 650px;
     height: 660px;
-    background: linear-gradient(177.09deg, #efefef 50%, #05dda0 250%);
+    background: linear-gradient(177.09deg, #efefef 15%, var(--blackColor) 150%);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-  }
+}
+.modal-close{
+    cursor: pointer;
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+    padding: 0.3em;
+    font-size: 2em;
+    height: 1em;
+    width: 1em;
+    text-indent: 10em;
+    overflow: hidden;
+    border: 0;
+}
+.modal-close::after{
+    position: absolute;
+    line-height: 0.5;
+    content: "\00D7";
+    text-indent: 0;
+    top: 0.2em;
+    left: 0.1em;
+}
+.modal__title{
+    font-family: 'Vollkorn', serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+}
 
-
+/* Анимированная форма входа */
+.form{
+    text-align: center;
+    padding: 100px;
+}
+.modal__body .user-box{
+    position: relative;
+}
+.modal__body .user-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--whiteColor);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--whiteColor);
+    outline: none;
+    background: transparent;
+}
+.modal__body .user-box label{
+    font-family: 'Vollkorn', serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 22px;
+    color: var(--whiteColor);
+    text-shadow: 1px 1px 3px #000;
+    pointer-events: none;
+    transition: .5s;
+}
+.modal__body .user-box input:focus ~ label,
+.modal__body .user-box input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #05dda0;
+    font-size: 18px;
+    padding-top: 5px;
+}
+.modal__body form a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color:#05dda0;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+.modal__body a:hover{
+    background: #05dda0;
+    color: var(--whiteColor);
+    border-radius: 5px;
+    box-shadow: 0 0 5px #05dda0,
+                0 0 25px #05dda0,
+                0 0 50px#05dda0,
+                0 0 100px #05dda0;
+}
+.modal__body a span{
+    position: absolute;
+    display: block;
+}
+.modal__body a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #05dda0);
+    animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1{
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+}
+.modal__body a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #05dda0);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+@keyframes btn-anim2{
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+}
+.modal__body a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #05dda0);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+@keyframes btn-anim3{
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+}
+.modal__body a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #05dda0);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+@keyframes btn-anim4{
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+}
 
 /* Main */
 
@@ -323,6 +482,33 @@ button.slick-prev.slick-arrow::before{
 }
 button.slick-next.slick-arrow::before{
     font-size: 45px;
+}
+
+/* Footer */
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+.footer__nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+.fo{
+    font-family: 'Roboto', sans-serif;
+    align-self: center;
+    font-size: 40px;
+}
+.f__phone:hover{
+    color: var(--bgColor);
+    transition: color 0.3s linear;
+}
+.foot{
+    width: 55%;
 }
 
 /* Scrollup */
