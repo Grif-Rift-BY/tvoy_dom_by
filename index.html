@@ -47,15 +47,35 @@
         <div class="modal" id="modal">
 
             <div class="modal__body">
-                <h3 class="modal__title">Оставьте нам свои контактные данные и менеджер свяжется с Вами</h3>
+                <button class="modal-close" id="closed">Закрыть</button>
+                <h3 class="modal__title">Оставьте свои контактные данные <br> и менеджер свяжется с Вами</h3>
 
+                <form class="form">
+                    <div class="user-box">
+                      <input type="text" name="" required="">
+                      <label>Фамилия и Имя</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="tel" name="" required="">
+                        <label>Мобильный номер телефона</label>
+                      </div>
+                    <div class="user-box">
+                      <input type="text" name="" required="">
+                      <label>Краткое описание услуги</label>
+                    </div>
+                    <a href="#">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Отправить
+                    </a>
+                  </form>
 
-                <div class="closed" id="win">
-                    close
-                </div>
             </div>
 
         </div> <!-- /.pop up -->
+
 
         <main class="main">
 
@@ -288,6 +308,20 @@
             <div class="footer__logo">
                 <img src="img/logo/logo150bg2.png" alt="Логотип сайта Твой ДОМ">
             </div>
+
+            <div class="fo">
+                <div class="footer__phone"><a class="link f__phone" href="tel:+375291232255">+ 375 29 123-22-55</a></div>
+            </div>
+
+            <nav class="nav foot">
+                <ul class="footer__nav">
+                    <li class="footer__link"><a class="link" href="#houses">Каркасные дома</a></li>
+                    <li class="footer__link"><a class="link" href="#baths">Бани / Гаражи / Беседки</a></li>
+                    <li class="footer__link"><a class="link" href="#reviews">Отзывы</a></li>
+                    <li class="footer__link"><a class="link" href="#contacts">Контакты</a></li>
+
+                </ul>
+            </nav>
 
         </footer>
 
