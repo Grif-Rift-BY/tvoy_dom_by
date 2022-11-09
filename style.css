@@ -72,6 +72,39 @@ body{
 .link:hover{
     text-decoration: underline;
 }
+.burger__header{
+    display: none;
+}
+
+/* Header Burger */
+
+.header__burger{
+    width: 35px;
+    height: 25px;
+    position: relative;
+    left: 25px;
+    bottom: -40px;
+}
+.burger__line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blackColor);
+    left: 0;
+    position: absolute;
+}
+.burger__line_first{
+    top: 0;
+}
+.burger__line_second{
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.burger__line_third{
+    height: 3px;
+    bottom: 0;
+}
 
 /* Pop up */
 .modal{
@@ -127,7 +160,7 @@ body{
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: var(--whiteColor);
+    color: var(--blackColor);
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid var(--whiteColor);
@@ -254,8 +287,8 @@ body{
 .background__color{
     max-width: 1500px;
     height: 100px;
-    background-color: rgb(239, 239, 239, 0.5);
-    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+    background-color: rgb(239, 239, 239, 0.8);
+    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.9);
 }
 .preview__wrapper{
     display: flex;
@@ -275,6 +308,9 @@ body{
     width: 850px;
     display: 500px;
     margin: 70px 0 0 50px;
+}
+.mobile__preview{
+    display: none;
 }
 .preview__title{
     font-weight: 600;
@@ -392,6 +428,7 @@ body{
 }
 .background__advantages{
     width: 100%;
+    height: 400px;
     padding: 20px;
     background-color: rgb(255, 255, 255, 0.5);
     border-radius: 5px;
@@ -406,14 +443,14 @@ body{
 }
 .advantages__title{
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 1.7em;
     font-weight: 900;
 }
 .advantages__text{
     font-style: italic;
     font-weight: 600;
     margin-top: 30px;
-    font-size: 23px;
+    font-size: 1.3em;
     text-shadow: 1px 1px 1px var(--bgColor);
 }
 
@@ -534,4 +571,220 @@ button.slick-next.slick-arrow::before{
     background-color: var(--bgColor);
     color: var(--blackColor);
     transition: background-color 0.2s linear;
+}
+
+
+/* Адаптив */
+@media (max-width: 391px){
+    .header{
+        display: none;
+    }
+    .burger__header{
+        display: block;
+        display: flex;
+        width: 390px;
+        height: 100px;
+    }
+    .background__color{
+        max-width: 390px;
+    }
+    .burger__phone{
+        align-self: center;
+        margin-top: 5px;
+        margin-left: -10px;
+    }
+    .burger__preview__phone{
+        text-decoration: none;
+        color: var(--blackColor);
+        font-size: 25px;
+        font-weight: 700;
+        font-family: 'Vollkorn', serif;
+    }
+    .preview{
+        display: none;
+    }
+    .preview__wrapper{
+        background-color: rgb(255, 255, 255, 0.3);
+    }
+    .mobile__preview{
+        display: block;
+        max-width: 390px;
+        height: 555px;
+        margin: 0 auto;
+        margin-top: -100px;
+        background-image: url(img/mobile/1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .mobile__wrapper{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .mobile__title{
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    .mobile__subtitle{
+        font-weight: 700;
+        font-size: 20px;
+        text-shadow: 1px 1px 5px var(--bgColor);
+        margin-bottom: 40px;
+    }
+    .btn{
+        position: relative;
+        width: 350px;
+        height: 60px;
+        padding: 10px 25px;
+        background-color: rgba(10, 57, 66, 0.8);
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+        font-size: 25px;
+        color: var(--bgColor);
+        letter-spacing: 1px;
+    }
+    .btn span{
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--flip));
+    }
+    @keyframes flip{
+        0%, 80%{
+            transform: rotateY(360deg);
+        }
+    }
+    .burger__nav{
+        width: 65%;
+        height: 220px;
+        position: fixed;
+        top: 10px;
+        left: 90px;
+        background-color: var(--blackColor);
+        z-index: 100;
+        padding: 10px;
+        border-radius: 15px;
+        transform: translateX(150%);
+        transition: .2s all linear;
+    }
+    .burger__nav_active{
+        transform: translateX(0);
+    }
+    .header__nav{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+    .header__link{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .b__link{
+        color: var(--bgColor);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'Vollkorn', serif;
+    }
+    .header__nav-close{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 500;
+    }
+    .header__nav-close-line{
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: var(--bgColor);
+        top: 50%;
+    }
+    .header__nav-close-line:first-child{
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    .houses{
+        padding: 0;
+        margin-top: 40px;
+    }
+    .houses__title{
+        font-size: 35px;
+        padding-top: 30px;
+    }
+    .houses__subtitle{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .gallery img{
+        width: 100%;
+    }
+    .houses__bg{
+        text-align: center;
+    }
+    .houses__background{
+        width: 100%;
+        margin: 0px;
+        padding: 10px;
+    }
+    .houses__img img{
+        display: none;;
+    }
+    .houses__text{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .houses__title{
+        width: 100%;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .call{
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    .btn{
+        width: 100%;
+    }
+    .advantages{
+        flex-wrap: wrap;
+    }
+    .advantages__inner{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .reviews{
+        padding: 0;
+        height: 850px;
+    }
+    .reviews__profile{
+        padding: 10px;
+        width: 100%;
+    }
+    .profile{
+        padding: 10px;
+    }
+    .reviews__img img{
+        width: 100%;
+    }
+    .footer{
+        width: 390px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .footer__phone{
+        font-size: 30px;
+    }
+    .foot{
+        display: none;
+    }
 }
