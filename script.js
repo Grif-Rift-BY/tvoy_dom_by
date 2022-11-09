@@ -37,3 +37,17 @@ close.addEventListener('click', function(event){
     event.preventDefault();
     modal.style.display = 'none';
 });
+
+/* Burger menu  */
+
+(function () {
+    const burgerItem = document.querySelector('.burger');
+    const menu = document.querySelector('.burger__nav');
+    const menuCloseItem = document.querySelector('.header__nav-close');
+    burgerItem.addEventListener('click', () => {
+        menu.classList.add('burger__nav_active');
+    });
+    menuCloseItem.addEventListener('click', () => {
+        menu.classList.remove('burger__nav_active');
+    });
+}());
