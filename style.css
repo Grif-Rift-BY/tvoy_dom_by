@@ -528,6 +528,7 @@ button.slick-next.slick-arrow::before{
 
 /* Footer */
 .footer{
+    font-family: 'Vollkorn', serif;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -562,8 +563,8 @@ button.slick-next.slick-arrow::before{
     height: 45px;
     opacity: 0.5;
     position: fixed;
-    bottom: 70px;
-    right: 90px;
+    bottom: 10vw;
+    right: 10vh;
     font-size: 2rem;
     border-radius: 5px;
     text-indent: 14px;
@@ -644,7 +645,285 @@ button.slick-next.slick-arrow::before{
 }
 
 @media (max-width: 950px){
+    .button{
+        margin-right: 20px;
+    }
+    .wrapper{
+        width: 68%;
+    }
+    .btn{
+        display: none;
+    }
+    .phone{
+        margin: 70px auto;
+    }
+}
 
+@media (max-width: 850px){
+    .header{
+        display: none;
+    }
+    .burger__header{
+        width: 100%;
+        display: block;
+        display: flex;
+    }
+    .background__color{
+        max-width: 100%;
+    }
+    .burger__phone{
+        width: 75%;
+        text-align: center;
+        align-self: center;
+    }
+    .burger__preview__phone{
+        text-decoration: none;
+        color: var(--blackColor);
+        font-size: 55px;
+        font-weight: 700;
+        font-family: 'Vollkorn', serif;
+    }
+    .preview{
+        display: none;
+    }
+    .preview__wrapper{
+        background-color: rgb(255, 255, 255, 0.3);
+    }
+    .mobile__preview{
+        display: block;
+        max-width: 850px;
+        height: 555px;
+        margin: 0 auto;
+        margin-top: -100px;
+        background-image: url(img/mobile/1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .mobile__wrapper{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .mobile__title{
+        font-size: 42px;
+        padding: 0 10px;
+    }
+    .mobile__subtitle{
+        font-weight: 700;
+        font-size: 30px;
+        text-shadow: 1px 1px 5px var(--bgColor);
+        margin-bottom: 40px;
+    }
+    .btn{
+        position: relative;
+        width: 850px;
+        height: 60px;
+        padding: 10px 25px;
+        background-color: rgba(10, 57, 66, 0.8);
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+        font-size: 25px;
+        color: var(--bgColor);
+        letter-spacing: 1px;
+    }
+    .btn span{
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--flip));
+    }
+    @keyframes flip{
+        0%, 80%{
+            transform: rotateY(360deg);
+        }
+    }
+    .burger__nav{
+        width: 330px;
+        height: 220px;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        background-color: var(--blackColor);
+        z-index: 100;
+        padding: 10px;
+        border-radius: 15px;
+        transform: translateX(150%);
+        transition: .2s all linear;
+    }
+    .burger__nav_active{
+        transform: translateX(0);
+    }
+    .header__nav{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+    .header__link{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .b__link{
+        color: var(--bgColor);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'Vollkorn', serif;
+    }
+    .header__nav-close{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 500;
+    }
+    .header__nav-close-line{
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: var(--bgColor);
+        top: 50%;
+    }
+    .header__nav-close-line:first-child{
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    .houses{
+        padding: 0;
+        margin-top: 40px;
+    }
+    .houses__title{
+        font-size: 35px;
+        padding-top: 30px;
+    }
+    .houses__subtitle{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .gallery img{
+        width: 100%;
+    }
+    .houses__bg{
+        text-align: center;
+    }
+    .houses__background{
+        width: 100%;
+        margin: 0px;
+        padding: 10px;
+    }
+    .houses__img img{
+        display: none;;
+    }
+    .houses__text{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .houses__title{
+        width: 100%;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .call{
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    .btn{
+        width: 100%;
+    }
+    .advantages{
+        flex-wrap: wrap;
+    }
+    .advantages__inner{
+        width: 70%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .advantages__img img{
+        width: 20%;
+    }
+    .advantages__title{
+        font-size: 30px;
+    }
+    .advantages__text{
+        font-size: 25px;
+        font-style: italic;
+    }
+    .reviews{
+        padding: 0;
+        height: 1000px;
+    }
+    .reviews__profile{
+        padding: 10px;
+        width: 100%;
+    }
+    .profile{
+        padding: 10px;
+    }
+    .reviews__img img{
+        width: 100%;
+    }
+    .footer{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .footer__phone{
+        font-size: 30px;
+    }
+    .foot{
+        display: none;
+    }
+}
+
+@media (max-width: 700px){
+    .burger__header{
+        width: 90%;
+        justify-content: space-between;
+    }
+    .burger__phone{
+        width: 50%;
+    }
+    .burger__phone a{
+        font-size: 35px;
+    }
+    .burger__nav{
+        left: 45%;
+    }
+}
+
+@media (max-width: 600px){
+    .burger__phone a{
+        font-size: 25px;
+    }
+    .burger__nav{
+        left: 35%;
+    }
+    .advantages__title{
+        margin-top: 20px;
+        font-size: 25px;
+    }
+    .advantages__text{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px){
+    .burger__nav{
+        left: 23%;
+    }
+}
+
+@media (max-width: 400px){
+    .burger__nav{
+        left: 15%;
+    }
 }
 
 @media (max-width: 391px){
@@ -654,7 +933,8 @@ button.slick-next.slick-arrow::before{
     .burger__header{
         display: block;
         display: flex;
-        width: 390px;
+        justify-content: space-between;
+        width: 350px;
         height: 100px;
     }
     .background__color{
@@ -664,6 +944,9 @@ button.slick-next.slick-arrow::before{
         align-self: center;
         margin-top: 5px;
         margin-left: -10px;
+    }
+    .burger__phone a{
+        font-size: 20px;
     }
     .burger__preview__phone{
         text-decoration: none;
