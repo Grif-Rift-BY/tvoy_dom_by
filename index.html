@@ -81,26 +81,25 @@
                 <button class="modal-close" id="closed">Закрыть</button>
                 <h3 class="modal__title">Оставьте свои контактные данные <br> и менеджер свяжется с Вами</h3>
 
-                <form action="\" class="form">
+                <form action="" class="form" id="MAIL-FORM">
                     <div class="user-box">
                       <input type="text" name="username" id="username" required autocomplete="off">
                       <label for="username">Фамилия и Имя</label>
                     </div>
                     <div class="user-box">
-                        <input type="tel" name="#" required>
+                        <input type="tel" name="phone" required>
                         <label>Мобильный номер телефона</label>
                       </div>
                     <div class="user-box">
-                      <input type="text" name="#" required>
+                      <input type="text" name="content" required>
                       <label>Краткое описание услуги</label>
                     </div>
-                    <a href="#">
+                    <input type="submit" value="Отправить">
                       <span></span>
                       <span></span>
                       <span></span>
                       <span></span>
-                      Отправить
-                    </a>
+                    </input>
                   </form>
 
             </div>
@@ -395,6 +394,7 @@
         <script src="jquery-3.6.0.min.js"></script>
         <script src="slick-1.8.1/slick/slick.min.js"></script>
         <script src="script.js"></script>
+        <script src="js/email-send.js"></script>
 
     </body>
 
