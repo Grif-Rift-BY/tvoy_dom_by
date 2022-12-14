@@ -81,20 +81,24 @@
                 <button class="modal-close" id="closed">Закрыть</button>
                 <h3 class="modal__title">Оставьте свои контактные данные <br> и менеджер свяжется с Вами</h3>
 
-                <form action="" class="form" id="MAIL-FORM">
+                <form action="php/sendmail.php" class="form" id="mail-form" method="post">
+                    <div class="form__response form__element-hidden" id="form-response">
+                        <p class="form__response-content modal__title">Ваше сообщение отправлено</p>
+                    </div>
+                    <input type="button" class="form__button-ok btn form__element-hidden" id="form-button-ok" value="ОК">
                     <div class="user-box">
-                      <input type="text" name="username" id="username" required autocomplete="off">
+                      <input type="text" name="name" id="username" required autocomplete="off">
                       <label for="username">Фамилия и Имя</label>
                     </div>
                     <div class="user-box">
                         <input type="tel" name="phone" required>
-                        <label>Мобильный номер телефона</label>
+                        <label>Номер телефона c кодом</label>
                       </div>
                     <div class="user-box">
                       <input type="text" name="content" required>
                       <label>Краткое описание услуги</label>
                     </div>
-                    <input type="submit" value="Отправить">
+                    <input type="submit" value="Отправить" class="form__button-submit btn" id="form-button-submit">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -123,15 +127,18 @@
                         &#10004; Выполнение отделочных и внутренних работ
                         </p>
                         <button class="btn" id="open">
-                            <span style="--flip:1">П</span>
-                            <span style="--flip:2">о</span>
-                            <span style="--flip:3">д</span>
-                            <span style="--flip:4">р</span>
-                            <span style="--flip:5">о</span>
-                            <span style="--flip:6">б</span>
-                            <span style="--flip:7">н</span>
+                            <span style="--flip:1">Н</span>
+                            <span style="--flip:2">а</span>
+                            <span style="--flip:3">п</span>
+                            <span style="--flip:4">и</span>
+                            <span style="--flip:5">ш</span>
+                            <span style="--flip:6">и</span>
+                            <span style="--flip:7">т</span>
                             <span style="--flip:8">е</span>
-                            <span style="--flip:9">е</span>
+                            <span style="--flip:9"> </span>
+                            <span style="--flip:10">н</span>
+                            <span style="--flip:11">а</span>
+                            <span style="--flip:12">м</span>
                         </button>
                     </div>
 

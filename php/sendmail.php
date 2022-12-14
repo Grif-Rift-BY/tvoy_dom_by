@@ -4,17 +4,19 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-// Переменные, которые отправляет пользователь
+// Переменные с формы, которые отправляет пользователь
 $name = $_POST['name'];
-$email = $_POST['email'];
-$text = $_POST['text'];
+$phone = $_POST['phone'];
+$text = $_POST['content'];
 
-// Формирование самого письма
+// Формирование HTML-разметки самого письма(можно добавить ин)
 $title = "Заголовок письма";
 $body = "
-<h2>Сообщение с формы обратной свзязи сайта</h2>
+<h2>Сообщение с формы обратной связи сайта</h2>
+<hr>
 <b>Имя:</b> $name<br>
-<b>Телефон:</b> $email<br><br>
+<b>Телефон:</b> $phone<br><br>
+<hr>
 <b>Сообщение:</b><br>$text
 ";
 
@@ -24,19 +26,19 @@ try {
     $mail->isSMTP();
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
-    //$mail->SMTPDebug = 2;
+    // $mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
-    // Настройки вашей почты
-    $mail->Host       = ''; // SMTP сервера вашей почты
-    $mail->Username   = ''; // Логин на почте
-    $mail->Password   = ''; // Пароль на почте
-    $mail->SMTPSecure = '';
+    // Настройки вашей почты(которая отправляет письмо)
+    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
+    $mail->Username   = 'tor.band@yandex.ru'; // Логин на почте
+    $mail->Password   = 'Tor.band.2022'; // Пароль на почте
+    $mail->SMTPSecure = 'TLS';
     $mail->Port       = 587;
-    $mail->setFrom('', ''); // Адрес самой почты и имя отправителя
+    $mail->setFrom('tor.band@yandex.ru', 'Сообщение с Tvoy-dom.by от '.$name); // Адрес самой почты(должен совпадать c Логин на почте) и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('');
+    $mail->addAddress('pavel.zalazaev@protonmail.com');
 
 // Отправка сообщения
 $mail->isHTML(true);

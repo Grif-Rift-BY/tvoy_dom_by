@@ -150,6 +150,15 @@ body{
     padding: 20px;
 }
 
+.form__button-ok {
+    display: block;
+    margin: auto !important;
+}
+
+.form__element-hidden{
+    display: none;
+}
+
 /* Анимированная форма входа */
 .form{
     text-align: center;
